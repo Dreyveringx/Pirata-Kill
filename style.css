@@ -1,0 +1,19 @@
+*{
+    margin: 0%;
+    font-family: 'Metal mania' serif;
+
+    
+}
+header{
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #fff;
+}
+h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    background-image: url(img/fondo.jpg);
+}
