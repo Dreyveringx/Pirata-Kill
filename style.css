@@ -1,14 +1,75 @@
-body {
+/* Estilos generales */
+body, html {
+    height: 100%;
     margin: 0;
-    padding: 0;
     overflow: hidden;
 }
 
-#movableElement {
-    width: 100px;
-    height: 20px;
-    background-color: blue;
-    position: absolute;
-    bottom: 0;
-    transition: transform 0.2s ease;
+#game-container {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: relative;
 }
+
+#background {
+    width: 100%;
+    height: 100%;
+    background-image: url("css/img/background.png"); /* Reemplaza 'tu_imagen_de_fondo.jpg' con la ruta de tu imagen de fondo */
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 0;
+    max-width: 100%;
+}
+
+
+#rain {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.lightning {
+    width: 100%;
+    height: 100%;
+    background: white;
+    position: absolute;
+    opacity: 0;
+}
+
+
+/* Estilos para gotas de lluvia */
+.raindrop {
+    width: 2px;
+    height: 10px;
+    background-color: rgb(172, 172, 217);
+    position: absolute;
+    animation: fall 0.5s linear infinite, fade 1s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+
+
