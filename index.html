@@ -1,11 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PIRATA KILL</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
 </head>
-<body>
-    
+<body background="img/fondo 1.jpeg">
+    <div id="container">
+        <h1>PIRATA KILL</h1>
+        <h2>NOMBRE DEL JUGADOR</h2>
+        <div id="players-container">
+            <input type="text" id="player-name" placeholder="User name">
+            <button id="add-player-button" >+</button>
+        </div>
+        <div class="cuadrado" >
+            <h2>User List</h2>
+         <ul id="players-list"></ul>
+        
+            
+        </div>
+        <button id="start-game-button" disabled>PLAY</button>
+        <button id="sound-button" class="sound-button" onclick="toggleSound()">🔊 Sound</button>
+        <audio id="game-sound">
+            <source src="sonidos/opcion1.mp3" type="audio/mpeg">
+            Tu navegador no soporta la reproducción de audio.
+        </audio>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
