@@ -19,22 +19,11 @@ document.addEventListener("mousemove", (event) => {
     const elementWidth = movableElement.offsetWidth;
     const maxX = windowWidth - elementWidth;
     const newX = Math.min(maxX, Math.max(0, xPosition - elementWidth / 2));
+
     movableElement.style.transform = `translateX(${newX}px)`;
 });
 
-const backgroundSound = document.getElementById("backgroundSound");
-const toggleSoundButton = document.getElementById("toggleSound");
 
-let isSoundEnabled = true; // Inicialmente, el sonido está habilitado
-
-toggleSoundButton.addEventListener("click", () => {
-    if (isSoundEnabled) {
-        backgroundSound.pause(); // Pausar el sonido
-    } else {
-        backgroundSound.play(); // Reproducir el sonido
-    }
-    isSoundEnabled = !isSoundEnabled; // Cambiar el estado del sonido
-});
 // Selecciona el botón de reset
 const resetButton = document.getElementById("reset-button");
 
@@ -43,7 +32,4 @@ resetButton.addEventListener("click", () => {
     // Usa el método 'scrollTo' para volver al principio
     window.scrollTo(0, 0);
 });
-
-
-
 
