@@ -1,0 +1,103 @@
+*{
+    margin: 0%;
+    box-sizing: border-box;
+    padding: 0%;
+    
+}
+body{
+    
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+#movableElement {
+    margin: 3%;
+    position: absolute; 
+    width: 100px; 
+    height: 100px; 
+    bottom: 0;
+    transition: transform 0.2s ease;
+}
+body img {
+    width: 150%;
+    height: 160%;
+}
+#reset {
+    position: absolute;
+    bottom: 20px; /* Ajusta la distancia desde la parte inferior según tus necesidades */
+    right: 20px; /* Ajusta la distancia desde la derecha según tus necesidades */
+    width: 100px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    font-size: 20px;
+    font-family: 'Metal Mania', cursive;
+    cursor: pointer;
+}
+h3{
+    font-size: xx-large;
+    color: #fff;
+    font-family: 'Metal Mania';
+    font-style: normal;
+    font-weight: 400%;
+
+
+}
+
+h4{
+    font-size: x-large;
+    color: #fff;
+    font-family: 'Metal Mania';
+    font-style: normal;
+    font-weight: 400%;
+  
+}
+
+
+.remove-icon {
+    width: 20px; 
+    height: 20px; 
+    margin-left: 10px; 
+    cursor: pointer;
+}
+
+#container {
+    font-family: 'Metal Mania';
+    font-style: normal;
+    font-weight: 150%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+}
+
+.sound-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #000000;
+    color: #fff;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sound-button:hover {
+    background-color: #0056b3;
+}
+
+.img_gun, .efecto:hover .img_klipartz{
+    display: flex;
+}
+.img_klipartz, .efecto:hover .img_gun{
+    display: none;
+}
