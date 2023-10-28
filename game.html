@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIRATA KILL</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+</head>
+<body style="background-image:url(resources/img/fondoDos.jpeg)">
+    <div id="container">
+        <h3>NIVEL I</h3>
+        <h4>SOFI HIGH SCORE: </h4>
+ 
+        <button id="sound-button" class="sound-button" onclick="toggleSound()">🔊 Sound</button>
+        <audio id="game-sound">
+            <source src="resources/Sound/Audio.mpeg" type="audio/mpeg">
+        </audio>
+    </div>
+    <main  id="movableElement" class="gun">
+        <div class="efecto">   
+            <img src=".resources/img/gunGif.gif" alt="gun" class="img_klipartz" id="klipartz">     
+            <img src=".resources/img/klipartz.com.png" alt="gun" class="img_gun" id="gunGif">
+            <audio id="shotgun-audio">
+                <source src="resources/Sound/Audio_Escopeta.mpeg" type="audio/mpeg">
+                Tu navegador no soporta la reproducción de audio.
+            </audio>
+            
+        </div>
+
+    </main>
+    <button id="reset">RESET</button> 
+    <script src="scripts/script.js"></script>
+</body>
+</html>

@@ -5,7 +5,7 @@
     
 }
 body{
-    background-image: url(img/lvl\ 1.png);
+    
     height: 100%;
     width: 100%;
     margin: 0;
@@ -93,4 +93,11 @@ h4{
 
 .sound-button:hover {
     background-color: #0056b3;
+}
+
+.img_gun, .efecto:hover .img_klipartz{
+    display: flex;
+}
+.img_klipartz, .efecto:hover .img_gun{
+    display: none;
 }
