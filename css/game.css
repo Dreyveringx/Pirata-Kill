@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Montserrat:wght@500&display=swap');
+
+
+body {
+    font-family: 'Metal Mania';
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../resources/img/lvl1.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+
+@media (max-width: 767px) {
+    background-image: url('path/to/background-small.jpg'); 
+}
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    background-image: url('path/to/background-medium.jpg'); 
+}
+
+
+@media (min-width: 1024px) {
+    background-image: url('resources/img/lvl1.png'); 
+}
+
+
+
+#message {
+    text-align: center;
+    position: absolute;
+    margin: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    top: 0%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 50px;
+}
+
+
+#counter {
+    text-align: center;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);;
+    color: white;
+    font-size: 50px;
+    margin: 5%;
+}
+
+
+
+#gameSoundControlButton {
+    position: absolute;
+    top: 2%;
+    left: 95%;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+}
+
+
+#weapon {
+    width: 25%;
+    background-image: url('../resources/img/arma0.png');
+    background-repeat: no-repeat;
+    height: 25%;
+    bottom: 0;
+    position: absolute;
+}
+
+#weapon.active {
+    background-image: url('../resources/img/armaper.png');
+    width: 45%;
+    height: 45%;
+    background-repeat: no-repeat;
+    bottom: 0;
+
+    position: absolute;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
