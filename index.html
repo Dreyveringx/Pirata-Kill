@@ -1,11 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PIRATA KILL</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <header class="w3-display-container w3-wide" id="home">
+        <video class="w3-image" src="soursces/img/Creaciones S&S.mp4" alt="Fashion Blog" width="1600" height="1060" controls autoplay loop></video>
+
+    <div id="container">
+        <h1>PIRATA KILL</h1>
+        <h2>NOMBRE DEL JUGADOR</h2>
+        <div id="players-container">
+            <input type="text" id="player-name" placeholder="User name">
+            <button id="add-player-button" >+</button>
+        </div>
+        <div class="cuadrado" >
+            <h2>User List</h2>
+            <ul id="players-list"></ul>
+        
+            
+        </div>
+        
+        <button id="start-game-button" disabled>PLAY</button>
+        <button id="sound-button" class="sound-button" onclick="toggleSound()" controls autoplay loop>🔊 Sound </button>
+        <audio id="game-sound">
+            <source src="soursces/sonidos/caribe.mp3" type="audio/mpeg">
+            Tu navegador no soporta la reproducción de audio.
+        </audio>
+    </div>
+    </header>
+    <script src="scripts/script.js"></script>
 </body>
 </html>

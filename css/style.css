@@ -1,0 +1,246 @@
+h1{
+    font-size: 80px;
+    color: #fff;
+    font-family: 'Metal Mania';
+    font-style: normal;
+    font-weight: 400;
+
+}
+
+@media screen and ( max-width: 414px) 
+{
+    h1{
+        font-size: 80px;
+        color: #ffffff;
+        font-family: 'Metal Mania';
+    }
+ }  
+
+
+h2{
+    color: #fff;
+    font-family: 'Metal Mania';
+    font-style: normal;
+    font-weight: 400;
+  
+}
+
+@media screen and ( max-width: 414px) 
+{
+    h2{
+        font-size: 90px;
+        color: #ffffff;
+        font-family: 'Metal Mania';
+    }
+ }  
+
+
+.remove-icon {
+    width: 20px; 
+    height: 20px; 
+    margin-left: 10px; 
+    cursor: pointer;
+}
+
+#container {
+    font-family: 'Metal Mania';
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+@media screen and ( max-width: 414px) 
+{
+    #container {
+        font-size:10px;
+        color: #000000;
+        font-family: 'Metal Mania';
+    }
+ }  
+
+.cuadrado {
+    background-color: #ffffff82;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    overflow: hidden; 
+}
+
+@media screen and ( max-width: 414px) 
+{
+    .cuadrado{
+        font-size: 90px;
+        color: #ffffff;
+        font-family: 'Metal Mania';
+    }
+ }  
+
+ul {
+    background-color: #ffffff;
+    width: 200px;
+    height: 150px;
+    list-style: none;
+    padding: 0;
+    margin: 0; 
+    text-align: center; 
+}
+
+@media screen and ( max-width: 414px) 
+{
+    ul{
+        font-size: 900px;
+        color: #ffffff;
+        font-family: 'Metal Mania';
+    }
+ }  
+
+ 
+#players-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+@media screen and ( max-width: 414px) 
+{
+    #players-container{
+        font-size: 90px;
+        color: #ffffff;
+        font-family: 'Metal Mania';
+    }
+ }  
+
+#player-name {
+    width: 200px;
+    padding:  10px 7px;
+}
+
+@media screen and ( max-width: 414px) 
+{
+    #player-name{
+        font-size: 90px;
+        color: #ffffff;
+        font-family: 'Metal Mania';
+    }
+ }  
+
+#add-player-button {
+    background-color: rgba(255, 255, 255, 0.347);
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+@media screen and ( max-width: 414px) 
+{
+    #add-player-button{
+        font-size: 90px;
+        color: #ffffff;
+        font-family: 'Metal Mania';
+    }
+ }  
+
+#add-player-button:hover {
+    background-color: #0056b3;
+}
+
+#start-game-button {
+    background-color: #000000;
+    color: #fff;
+    font-family: 'Metal Mania';
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 30px;
+}
+
+#start-game-button:disabled {
+    background-color: #000000;
+    cursor: pointer;
+}
+
+@media screen and ( max-width: 414px) 
+{
+    #start-game-button{
+        font-size: 900px;
+        background-color: #ffffff;
+        font-family: 'Metal Mania';
+    }
+ }  
+
+#start-game-button:hover {
+    background-color: #0056b3;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    font-size: 18px;
+}
+
+
+
+.sound-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #000000;
+    color: #fff;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sound-button:hover {
+    background-color: #0056b3;
+}
+
+video {
+    position: fixed;
+     right: 0;
+     bottom: 0;
+    min-width: 100%;
+     min-height: 100%;
+     z-index: -1;
+    }
+
+    @media screen and ( max-width: 514px) 
+    {
+        video{
+            
+                position: fixed;
+                top: 0;
+                left: 0;
+                min-width: 60px;
+                min-height: 50px;
+                width: auto;
+                height: auto;
+                z-index: -1; 
+            
+                .content {
+                    position: relative;
+                    z-index: 1;
+                }
+    }  
+}
+
