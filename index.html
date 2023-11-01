@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PIRATA KILL</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+</head>
+<body background="resources/img/prot.jpeg">
+    <div id="container">
+        <h1>PIRATA KILL</h1>
+        <h2>NOMBRE DEL JUGADOR</h2>
+        <div id="players-container">
+            <input type="text" id="player-name" placeholder="User name">
+            <button id="add-player-button" >+</button>
+        </div>
+        <div class="cuadrado" >
+            <h2>User List</h2>
+         <ul id="players-list"></ul>
+        </div>
+        <!-- index.html -->
+        <a href="game.html" id="start-game-link" style="display: none;"></a>
+        <input type="hidden" id="player-names" value="">
+
+        <button id="start-game-button" disabled>PLAY</button>
+        <button id="exit-button" style="display: none;">Salir</button>
+
+        <button id="sound-button" class="sound-button" onclick="toggleSound()">🔊 Sound</button>
+        <audio id="game-sound">
+            <source src="resources/sound/ringtones-of-caribbean.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
