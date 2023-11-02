@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const playerNameInput = document.getElementById("player-name");
 const addPlayerButton = document.getElementById("add-player-button");
 const startGameButton = document.getElementById("start-game-button");
@@ -104,3 +105,6 @@ window.addEventListener("orientationchange", function() {
         // Realizar acciones específicas
     }
 });
+=======
+
+>>>>>>> 32bd62d8d898ff410429ec6b19d7b82f96073855
