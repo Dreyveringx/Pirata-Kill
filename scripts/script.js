@@ -12,6 +12,8 @@ addPlayerButton.addEventListener("click", () => {
         players.push(playerName);
         playerNameInput.value = "";
         updatePlayerList();
+
+        localStorage.setItem("players", JSON.stringify(players));
     }
 });
  
@@ -64,6 +66,7 @@ function updatePlayerList() {
 
 
 
+
     if (players.length >= 2) {
         startGameButton.disabled = false;
     } else {
@@ -73,9 +76,27 @@ function updatePlayerList() {
 }
 
 
+
 startGameButton.addEventListener("click", () => {
-    alert("¡Juego iniciado con " + players.length + " jugadores!");
+    if (players.length >= 2) {
+        const playerNames = players.join(",");
+        localStorage.setItem("players", JSON.stringify(players)); // Almacena los nombres en localStorage
+        const gameLink = document.getElementById("start-game-link");
+        gameLink.click();
+    } else {
+        alert("Debes tener al menos 2 jugadores para iniciar el juego.");
+    }
 });
+
+
+
+
+const exitButton = document.getElementById("exit-button");
+exitButton.addEventListener("click", () => {
+    location.href = "index.html";
+});
+
+
 
 function eliminarElemento(index) {
     players.splice(index, 1);
@@ -83,24 +104,15 @@ function eliminarElemento(index) {
 }
 function iniciarJuego() {
     if (players.length >= 2) {
-        const playerNames = players.join(", ");
-        alert(`¡Juego iniciado con ${players.length} jugadores!\nNombres de los jugadores: ${playerNames}`);
-        
+        currentPlayerIndex = 0; 
+        const currentPlayer = players[currentPlayerIndex];
+        mostrarMensaje(`Nivel 1 - Jugador actual: ${currentPlayer}`);
+      
     } else {
         alert("Debes tener al menos 2 jugadores para iniciar el juego.");
     }
 }
 
 
-startGameButton.addEventListener("click", iniciarJuego);
 
-// Ejemplo de detección de orientación
-window.addEventListener("orientationchange", function() {
-    if (window.orientation === 90 || window.orientation === -90) {
-        // Estás en orientación horizontal
-        // Realizar acciones específicas
-    } else {
-        // Estás en orientación vertical
-        // Realizar acciones específicas
-    }
-});
+startGameButton.addEventListener("click", iniciarJuego);
