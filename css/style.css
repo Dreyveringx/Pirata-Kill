@@ -1,6 +1,9 @@
-<<<<<<< HEAD
-h1{
-    font-size: 80px;
+
+h1{ 
+    position:absolute;
+    top: 4%;
+    margin: auto;
+    font-size: 100px;
     color: #fff;
     font-family: 'Metal Mania';
     font-style: normal;
@@ -157,10 +160,12 @@ ul {
 }
 
 #start-game-button {
+    position:absolute;
+    bottom: 20px;
     background-color: #000000;
     color: #fff;
     font-family: 'Metal Mania';
-    font-size: 20px;
+    font-size: 50px;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -244,6 +249,4 @@ video {
                 }
     }  
 }
-=======
->>>>>>> 32bd62d8d898ff410429ec6b19d7b82f96073855
 

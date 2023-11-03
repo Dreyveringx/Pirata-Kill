@@ -1,3 +1,14 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const video = document.createElement("video");
+    video.src = "../soursces/img/vid.mp4";
+    video.autoplay = true;
+    video.muted = true;
+    video.loop = true;
+  
+    const body = document.querySelector("body");
+    body.appendChild(video);
+  });
+
 const playerNameInput = document.getElementById("player-name");
 const addPlayerButton = document.getElementById("add-player-button");
 const startGameButton = document.getElementById("start-game-button");
