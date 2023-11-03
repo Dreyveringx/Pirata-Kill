@@ -6,32 +6,28 @@ document.addEventListener("DOMContentLoaded", function() {
     const exitGameButton = document.getElementById("exit-game-button");
     const nextPlayerButton = document.getElementById("next-player-button");
 
-    let currentPlayerIndex = 0;
-    let isGameActive = true;
- 
-    function mostrarGameOverPopup() {
-    isGameActive = false; 
-    gameOverPopup.style.display = "block";
-}
 
-
-    exitGameButton.addEventListener("click", () => {
-        gameOverPopup.style.display = "none";
-
-        this.location.href = "index.html";
+    const gameSound = document.getElementById("gameSound");
+    const gameSoundControlButton = document.getElementById("gameSoundControlButton");
+  
+    gameSound.addEventListener("loadedmetadata", function () {
+        gameSound.play();
     });
-
-
-    nextPlayerButton.addEventListener("click", () => {
-    gameOverPopup.style.display = "none";
-
-    currentPlayerIndex = (currentPlayerIndex + 1) % players.length;
-    const currentPlayer = players[currentPlayerIndex];
-    mostrarMensaje(`Nivel 1 - Jugador actual: ${currentPlayer}`);
-
+  
+    gameSoundControlButton.addEventListener("click", function () {
+        if (gameSound.muted) {
+            gameSound.muted = false;
+            gameSoundControlButton.textContent = "🔊";
+            isGameSoundMuted = false;
+        } else {
+            gameSound.muted = true;
+            gameSoundControlButton.textContent = "🔇";
+            isGameSoundMuted = true;
+        }
     });
+  
+    gameSound.play();
 
-    const zombieEliminationSound = new Audio('resources/sound/muerte.mp3');
 
     const playerNames = JSON.parse(localStorage.getItem("players"));
     
@@ -40,6 +36,15 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
         mostrarMensaje('Nivel 1 - Jugadores: ');
     }
+
+    let currentPlayerIndex = 0;
+    let isGameActive = true;
+ 
+  
+    
+
+
+    const zombieEliminationSound = new Audio('resources/sound/zombie-death.mp3');
 
     const playersAlive = [...playerNames]; 
     const playersDead = [];
@@ -72,6 +77,12 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.appendChild(popup);
     }
     
+    exitGameButton.addEventListener("click", () => {
+      gameOverPopup.style.display = "none";
+
+      this.location.href = "index.html";
+  });
+
     
     function jugadorMuere() {
         const jugadorActual = playersAlive[currentPlayerIndex];
@@ -121,14 +132,6 @@ document.addEventListener("DOMContentLoaded", function() {
       mensajeElement.style.display = 'block';
     }
   
-
-    function switchToNextPlayer() {
-        currentPlayerIndex = (currentPlayerIndex + 1) % playerNames.length;
-        mostrarMensaje(`Nivel ${currentRound} - Jugador actual: ${playerNames[currentPlayerIndex]}`);
-    }
-
-    
-  
     let isWeaponAnimating = false;
   
     document.addEventListener('click', () => {
@@ -153,18 +156,6 @@ document.addEventListener("DOMContentLoaded", function() {
       event.stopPropagation();
     }
   
-    document.addEventListener('mousemove', (event) => {
-      const sceneRect = scene.getBoundingClientRect();
-      const sceneWidth = sceneRect.width;
-      const weaponWidth = weapon.clientWidth;
-      const mouseX = event.clientX - sceneRect.left;
-  
-      let weaponX = mouseX - weaponWidth / 2;
-      weaponX = Math.max(0, weaponX);
-      weaponX = Math.min(sceneWidth - weaponWidth, weaponX);
-  
-      weapon.style.left = weaponX + 'px';
-    });
   
     scene.addEventListener('click', (event) => {
       if (event.target.classList.contains('zombie')) {
@@ -188,35 +179,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function actualizarContador() {
       contador.textContent = `Total Kill: ${zombiesEliminados}`;
     }
-  
-    function moveZombie(zombie) {
-        let scale = 0.1;
-        let posX = parseFloat(zombie.style.left) || 0;
-        let posY = parseFloat(zombie.style.top) || 0;
-      
-        function animate() {
-          scale += 0.002;
-          posX += 1;
-          posY += 1;
-      
-          zombie.style.transform = `scale(${scale})`;
-          zombie.style.left = posX + 'px';
-          zombie.style.top = posY + 'px';
-      
-          if (scale < 1.0) {
-            requestAnimationFrame(animate);
-          } else {
 
-            jugadorMuere();
-          }
-        }
-      
-        animate();
-      }
-      
-  
-    let currentLevel = 1;
-  
     function createZombie() {
       if (isGameActive) {
       let zombieImagesList = zombieImages;
@@ -269,27 +232,34 @@ document.addEventListener("DOMContentLoaded", function() {
         clearInterval(interval);
         mostrarMensaje('Juego Finalizado');
       }, 55000);
+  
+    function moveZombie(zombie) {
+        let scale = 0.1;
+        let posX = parseFloat(zombie.style.left) || 0;
+        let posY = parseFloat(zombie.style.top) || 0;
+      
+        function animate() {
+          scale += 0.002;
+          posX += 1;
+          posY += 1;
+      
+          zombie.style.transform = `scale(${scale})`;
+          zombie.style.left = posX + 'px';
+          zombie.style.top = posY + 'px';
+      
+          if (scale < 1.0) {
+            requestAnimationFrame(animate);
+          } else {
+
+            jugadorMuere();
+          }
+        }
+      
+        animate();
+      }
       
   
-    const gameSound = document.getElementById("gameSound");
-    const gameSoundControlButton = document.getElementById("gameSoundControlButton");
-  
-    gameSound.addEventListener("loadedmetadata", function () {
-        gameSound.play();
-    });
-  
-    gameSoundControlButton.addEventListener("click", function () {
-        if (gameSound.muted) {
-            gameSound.muted = false;
-            gameSoundControlButton.textContent = "🔊";
-            isGameSoundMuted = false;
-        } else {
-            gameSound.muted = true;
-            gameSoundControlButton.textContent = "🔇";
-            isGameSoundMuted = true;
-        }
-    });
-  
-    gameSound.play();
+    let currentLevel = 1;
+     
   });
   
